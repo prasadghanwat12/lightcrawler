@@ -12,7 +12,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Clone the repository
-RUN git clone https://github.com/prasadghanwat12/lightnovel-crawler.git /app/lightnovel-crawler
+RUN git clone https://github.com/prasadghanwat12/lightcrawler.git /app/lightnovel-crawler
 
 # Change the working directory to the cloned repository
 WORKDIR /app/lightnovel-crawler
