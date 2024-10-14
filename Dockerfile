@@ -14,5 +14,8 @@ WORKDIR /app/
 # Install the Python dependencies
 RUN pip3 install --no-cache-dir -r requirements.txt
 
+# Expose port 8000 for Gunicorn
+EXPOSE 8000
+
 # Command to start the application using gunicorn and run the bot
-CMD gunicorn app:app & python3 lncrawl --bot telegram
+CMD gunicorn --bind 0.0.0.0:8000 app:app & python3 lncrawl --bot telegram
